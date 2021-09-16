@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.21'
+    id 'application'
+}
+
+mainClassName = "App"
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://frcmaven.wpi.edu/artifactory/release/" }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile "edu.wpi.first.ntcore:ntcore-java:2021.3.1"
+    compile "edu.wpi.first.wpiutil:wpiutil-java:2021.3.1"
+
+    runtime "edu.wpi.first.ntcore:ntcore-jni:2021.3.1:osxx86-64"
+}
